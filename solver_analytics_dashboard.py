@@ -2,6 +2,7 @@
 """
 🚀 Innov8 Ultra Analytics Dashboard
 Advanced Business Intelligence & Optimization Insights
+Version: 1.0 - Beltone Hackathon 2nd Edition
 """
 
 import streamlit as st
