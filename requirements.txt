@@ -4,6 +4,9 @@
 # Streamlit (REQUIRED for deployment)
 streamlit>=1.28.0
 
+# Hackathon-specific library
+robin-logistics-env
+
 # Data Analysis and Processing
 pandas>=2.0.0
 numpy>=1.24.0
