@@ -111,15 +111,20 @@ WORKING_DAYS = st.sidebar.number_input("Working Days/Year", value=250, min_value
 st.sidebar.markdown("---")
 
 # Constants
-BASELINE_VEHICLES_PER_ORDER = 0.4
-BASELINE_COST_PER_VEHICLE = 1000
+BASELINE_MAX_VEHICLES = 16
+BASELINE_COST_MIN = 3900
+BASELINE_COST_MAX = 4900
 BASELINE_FULFILLMENT_RATE = 0.75
 
 def calculate_baseline_metrics(num_orders):
     """Calculate traditional approach metrics."""
-    baseline_vehicles = int(num_orders * BASELINE_VEHICLES_PER_ORDER) + 1
+    # Use max 16 vehicles for baseline
+    baseline_vehicles = BASELINE_MAX_VEHICLES
     baseline_fulfilled = int(num_orders * BASELINE_FULFILLMENT_RATE)
-    baseline_cost = baseline_vehicles * BASELINE_COST_PER_VEHICLE
+
+    # Baseline cost between $3,900 - $4,900 (using middle value)
+    baseline_cost = (BASELINE_COST_MIN + BASELINE_COST_MAX) / 2  # $4,400
+
     baseline_revenue = baseline_fulfilled * REVENUE_PER_ORDER
     baseline_penalties = (num_orders - baseline_fulfilled) * PENALTY_PER_UNFULFILLED
     baseline_profit = baseline_revenue - baseline_cost - baseline_penalties
