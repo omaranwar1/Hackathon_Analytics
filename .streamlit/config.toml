@@ -8,5 +8,13 @@ textColor="#262730"
 font="sans serif"
 
 [server]
-# Disable theme choice for users
-enableStaticServing = false
+# Mobile optimization
+enableCORS = false
+enableXsrfProtection = true
+maxUploadSize = 200
+enableWebsocketCompression = true
+
+[browser]
+# Better mobile experience
+gatherUsageStats = false
+serverAddress = "0.0.0.0"

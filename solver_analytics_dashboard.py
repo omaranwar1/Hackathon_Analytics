@@ -19,17 +19,23 @@ from datetime import datetime
 # Import the solver
 from Innov8_solver_56 import my_solver
 
-# Page config
+# Page config - Mobile optimized
 st.set_page_config(
     page_title="Innov8 Ultra Analytics",
     page_icon="🚀",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    layout="centered",  # Better for mobile
+    initial_sidebar_state="auto"  # Auto-collapse on mobile
 )
 
 # Custom CSS for professional look - LIGHT MODE ONLY
 st.markdown("""
 <style>
+    /* Mobile viewport fix */
+    @viewport {
+        width: device-width;
+        zoom: 1.0;
+    }
+
     /* Force light mode and hide theme toggle */
     [data-testid="stSidebarNav"] button[kind="header"] {
         display: none !important;
@@ -41,6 +47,27 @@ st.markdown("""
     /* Ensure light background */
     .stApp {
         background-color: #ffffff;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Mobile responsive fixes */
+    @media (max-width: 768px) {
+        .big-font {
+            font-size: 24px !important;
+        }
+        .metric-card {
+            padding: 15px;
+            margin: 5px 0;
+        }
+        .stTabs [data-baseweb="tab"] {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+        /* Make plotly charts responsive */
+        .js-plotly-plot {
+            width: 100% !important;
+        }
     }
 
     .big-font {
