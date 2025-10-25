@@ -136,7 +136,7 @@ def calculate_baseline_metrics(num_orders):
 
 def calculate_route_distance(env, route_steps, adjacency_list):
     """Calculate total distance for a route."""
-    from Innov8_solver_75 import dijkstra_distance
+    from Innov8_solver_56 import dijkstra_distance
     total = 0.0
     for i in range(len(route_steps) - 1):
         dist = dijkstra_distance(adjacency_list, route_steps[i]['node_id'], route_steps[i+1]['node_id'])
@@ -176,7 +176,7 @@ def run_solver_analysis(seed_value):
         num_fulfilled = len(fulfilled_orders)
         fulfillment_rate = (num_fulfilled / total_orders * 100) if total_orders > 0 else 0
 
-        from Innov8_solver_75 import build_adjacency_list
+        from Innov8_solver_56 import build_adjacency_list
         adjacency_list = build_adjacency_list(env.get_road_network_data())
 
         vehicle_details = []
