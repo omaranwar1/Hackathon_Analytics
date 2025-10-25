@@ -1,0 +1,12 @@
+[theme]
+# Force light mode only
+base="light"
+primaryColor="#6366f1"
+backgroundColor="#ffffff"
+secondaryBackgroundColor="#f0f2f6"
+textColor="#262730"
+font="sans serif"
+
+[server]
+# Disable theme choice for users
+enableStaticServing = false

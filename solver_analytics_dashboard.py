@@ -26,9 +26,22 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for professional look
+# Custom CSS for professional look - LIGHT MODE ONLY
 st.markdown("""
 <style>
+    /* Force light mode and hide theme toggle */
+    [data-testid="stSidebarNav"] button[kind="header"] {
+        display: none !important;
+    }
+    button[kind="header"] {
+        display: none !important;
+    }
+
+    /* Ensure light background */
+    .stApp {
+        background-color: #ffffff;
+    }
+
     .big-font {
         font-size: 36px !important;
         font-weight: bold;
